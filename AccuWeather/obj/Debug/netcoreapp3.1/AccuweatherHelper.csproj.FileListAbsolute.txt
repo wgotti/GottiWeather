@@ -1,0 +1,5 @@
+C:\Users\Gotti\source\repos\Introducao\AccuweatherHelper\bin\Debug\netcoreapp3.1\AccuweatherHelper.deps.json
+C:\Users\Gotti\source\repos\Introducao\AccuweatherHelper\bin\Debug\netcoreapp3.1\AccuweatherHelper.dll
+C:\Users\Gotti\source\repos\Introducao\AccuweatherHelper\obj\Debug\netcoreapp3.1\AccuweatherHelper.csprojAssemblyReference.cache
+C:\Users\Gotti\source\repos\Introducao\AccuweatherHelper\obj\Debug\netcoreapp3.1\AccuweatherHelper.AssemblyInfoInputs.cache
+C:\Users\Gotti\source\repos\Introducao\AccuweatherHelper\obj\Debug\netcoreapp3.1\AccuweatherHelper.AssemblyInfo.cs

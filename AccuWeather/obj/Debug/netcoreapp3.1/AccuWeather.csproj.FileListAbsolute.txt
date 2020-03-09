@@ -1,0 +1,14 @@
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\bin\Debug\netcoreapp3.1\AccuWeather.deps.json
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\bin\Debug\netcoreapp3.1\AccuWeather.dll
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\bin\Debug\netcoreapp3.1\AccuWeather.pdb
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\bin\Debug\netcoreapp3.1\en-us\AccuWeather.resources.dll
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\bin\Debug\netcoreapp3.1\pt-BR\AccuWeather.resources.dll
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\AccuWeather.Resources.ExceptionMessages.en-us.resources
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\AccuWeather.Resources.ExceptionMessages.pt-BR.resources
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\AccuWeather.csproj.GenerateResource.cache
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\AccuWeather.AssemblyInfoInputs.cache
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\AccuWeather.AssemblyInfo.cs
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\en-us\AccuWeather.resources.dll
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\pt-BR\AccuWeather.resources.dll
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\AccuWeather.dll
+C:\Users\Gotti\source\repos\Introducao\AccuWeather\obj\Debug\netcoreapp3.1\AccuWeather.pdb

@@ -1,0 +1,98 @@
+﻿@using AccuWeather.Models.Forecast;
+@using System.Globalization;
+
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+@*@inject IViewLocalizer Localizer
+    @inject IOptions<RequestLocalizationOptions> LocOptions*@
+
+@if (Model.Location != null)
+{
+    <div>
+        <i>You are at ...</i><br />
+        <div class="display-4" style="display: inline-block; margin-right: 20px">
+            @Model.Location.LocalizedName - @Model.Location.AdministrativeArea.ID - @Model.Location.Country.ID
+        </div>
+        <i>
+            <a href="javascript: ressetPosition();">(Resset)</a>
+        </i>
+    </div>
+}
+
+
+@if (Model.Forecast != null)
+{
+    DailyForecast dailyForecast;
+    string day;
+    string humidity;
+    @for (int i = 0; i < 5; i++)
+    {
+        dailyForecast = Model.Forecast.DailyForecasts.ElementAt(i);
+        if (i == 0 && Model.CurrentCondition != null)
+        {
+            day = "Today";
+            humidity = string.Concat("Humidity: ", @Model.CurrentCondition.RelativeHumidity, "%");
+        }
+        else
+        {
+            day = @DateTimeOffset.FromUnixTimeSeconds(dailyForecast.EpochDate).LocalDateTime.ToLongDateString();
+            humidity = string.Empty;
+        }
+        <div class="float-left" style="margin: 20px">
+            <div class="card card-weather text-white bg-dark ">
+                <div class="card-header card-weather-header text-center vertical-align-middle">
+                    <h4>
+                        @day
+                    </h4>
+                </div>
+                <div class="card-body card-weather-body" style="padding:10px">
+                    <img src="@Url.Content("~/img/" + dailyForecast.Day.Icon.ToString() + ".png")" class="card-weather-icon center">
+                    <h6 class="card-title card-weather-title">
+                        <b>Day:</b> @dailyForecast.Day.ShortPhrase <br />
+                        <b>Night:</b> @dailyForecast.Night.ShortPhrase
+                    </h6>
+
+                    <div class="card-text card-weather-text">
+                        <div class="card-weather-switchunits">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="SwitchMetric" asp-route-language="en-US">
+                                Switch units<br />
+                                (Cº,Fº and Km/h, Mi/h )
+                            </a>
+                        </div>
+                        <hr />
+                        Min.: @dailyForecast.Temperature.Minimum.Value @dailyForecast.Temperature.Minimum.Unit<br />
+                        Max.: @dailyForecast.Temperature.Maximum.Value  @dailyForecast.Temperature.Maximum.Unit
+                        @if (i > 0) // Without this extra line, the bootstrap card layout breaks because cards have different heights
+                        {
+                            <br />
+                        }
+                        <br />
+                        @humidity
+                        <hr />
+                        Wind Day: @dailyForecast.Day.Wind.Speed.Value @dailyForecast.Day.Wind.Speed.Unit<br />
+                        Wind Night: @dailyForecast.Night.Wind.Speed.Value  @dailyForecast.Night.Wind.Speed.Unit
+                        <hr />
+                        Precipitation Day: @dailyForecast.Day.PrecipitationProbability % <br />
+                        Precipitation Night: @dailyForecast.Night.PrecipitationProbability %
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@if (Model.ErrorOccured)
+{
+    <script type="text/javascript">
+        showViewModelErrorMessage();
+        errorOccured = true;
+    </script>
+}
